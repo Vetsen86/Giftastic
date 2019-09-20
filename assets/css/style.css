@@ -1,0 +1,21 @@
+body {
+    font-family: 'Mansalva', cursive;
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    font-weight: bold;
+}
+
+#header {
+    background-color: #4771bf;
+    text-align: center;
+    border-bottom: 5px solid #5c5f63;
+    padding: 30px 0;
+}
+
+form {
+    margin: 30px 20px;
+}
