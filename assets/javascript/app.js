@@ -8,25 +8,14 @@ $(document).ready(function () {
             var newButton = $("<button>");
             newButton.text(topics[i]);
             newButton.attr("data-name", topics[i]);
+            newButton.addClass("button");
             $("#buttons").append(newButton);
         }
     }
     
     renderButtons(topics);
 
-    $("#searchSubmit").on("click", function(e) {
-        e.preventDefault();
-
-        var input = $("#searchInput").val();
-
-        topics.push(input);
-
-        $("#buttons").empty();
-
-        renderButtons(topics);
-    });
-
-    $("button").on("click", function() {
+    $(document).on("click", ".button", function() {
         console.log(this);
 
         var apiKey = "iB5zILy4QY7uboJHsauzmYky3qM0PcwV";
@@ -50,5 +39,17 @@ $(document).ready(function () {
         });
         
 
+    });
+
+    $("#searchSubmit").on("click", function(e) {
+        e.preventDefault();
+
+        var input = $("#searchInput").val();
+
+        topics.push(input);
+
+        $("#buttons").empty();
+
+        renderButtons(topics);
     });
 });
