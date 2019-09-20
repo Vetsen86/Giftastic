@@ -25,4 +25,23 @@ $(document).ready(function () {
 
         renderButtons(topics);
     });
+
+    $("button").on("click", function() {
+        console.log(this);
+
+        var apiKey = "iB5zILy4QY7uboJHsauzmYky3qM0PcwV";
+        var searchTerm = $(this).attr("data-name");
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + searchTerm + 
+            "&limit=10";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+            console.log(response);
+            
+        });
+        
+
+    });
 });
