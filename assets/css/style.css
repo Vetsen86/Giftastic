@@ -27,3 +27,7 @@ button {
     font-family: 'Mansalva', cursive;
     background-color: #4771bf;
 }
+
+img {
+    margin: 10px;
+}

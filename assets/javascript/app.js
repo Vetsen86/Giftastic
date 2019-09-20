@@ -39,7 +39,14 @@ $(document).ready(function () {
             method: "GET"
         }).then(function(response) {
             console.log(response);
-            
+            var results = response.data;
+
+            for (i = 0; i < results.length; i++) {
+                var newImg = $("<img>");
+                newImg.attr("src", results[i].images.fixed_height_still.url);
+                $("#images").append(newImg);
+            }
+
         });
         
 
