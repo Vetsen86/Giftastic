@@ -30,9 +30,15 @@ $(document).ready(function () {
             console.log(response);
             var results = response.data;
 
+            $("#images").empty();
+
             for (i = 0; i < results.length; i++) {
                 var newImg = $("<img>");
                 newImg.attr("src", results[i].images.fixed_height_still.url);
+                newImg.attr("data-still", results[i].images.fixed_height_still.url);
+                newImg.attr("data-animate", results[i].images.fixed_height.url);
+                newImg.attr("data-state", "still");
+                newImg.addClass("gif");
                 $("#images").append(newImg);
             }
 
@@ -51,5 +57,9 @@ $(document).ready(function () {
         $("#buttons").empty();
 
         renderButtons(topics);
+    });
+
+    $(document).on("click", ".gif", function() {
+        console.log(this);
     });
 });
