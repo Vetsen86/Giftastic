@@ -3,6 +3,7 @@ $(document).ready(function () {
         "Monster Hunter", "Skyrim", "Breath of the Wild", "Metal Gear"];
 
     function renderButtons(topics) {
+        
         for (i = 0; i < topics.length; i++) {
             var newButton = $("<button>");
             newButton.text(topics[i]);
@@ -12,4 +13,16 @@ $(document).ready(function () {
     }
     
     renderButtons(topics);
+
+    $("#searchSubmit").on("click", function(e) {
+        e.preventDefault();
+
+        var input = $("#searchInput").val();
+
+        topics.push(input);
+
+        $("#buttons").empty();
+
+        renderButtons(topics);
+    });
 });

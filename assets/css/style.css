@@ -1,5 +1,6 @@
 body {
     font-family: 'Mansalva', cursive;
+    background-color: #040512;
 }
 
 h1 {
@@ -18,8 +19,11 @@ h1 {
 
 form {
     margin: 30px 20px;
+    color: white;
 }
 
 button {
     margin: 30px 10px;
+    font-family: 'Mansalva', cursive;
+    background-color: #4771bf;
 }
